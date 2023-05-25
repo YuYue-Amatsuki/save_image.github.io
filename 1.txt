@@ -1,0 +1,78 @@
+[00:14:46 INF] ---开始 登录 ---
+[00:16:26 ERR] [REQUEST]
+GET /x/web-interface/nav HTTP/1.1
+Referer: https://www.bilibili.com/
+Origin: https://www.bilibili.com
+Host: api.bilibili.com
+Accept: application/json, text/plain, */*, application/json; q=0.001, application/xml; q=0.001
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+Connection: keep-alive
+
+[EXCEPTION]
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---＞ System.TimeoutException: A task was canceled.
+ ---＞ System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken )
+   at System.Net.Http.HttpConnectionPool.GetHttp11ConnectionAsync(HttpRequestMessage , Boolean , CancellationToken )
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage , Boolean , Boolean , CancellationToken )
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage , Boolean , CancellationToken )
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage , CancellationToken )
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendCoreAsync(HttpRequestMessage request, Context context, CancellationToken cancellationToken)
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy`1.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ray.BiliBiliTool.Agent.HttpClientDelegatingHandlers.IntervalDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage , CancellationToken )
+   at System.Net.Http.HttpClient.＜SendAsync＞g__Core|83_0(HttpRequestMessage , HttpCompletionOption , CancellationTokenSource , Boolean , CancellationTokenSource , CancellationToken )
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception , Boolean , HttpResponseMessage , CancellationTokenSource , CancellationToken , CancellationTokenSource )
+   at System.Net.Http.HttpClient.＜SendAsync＞g__Core|83_0(HttpRequestMessage , HttpCompletionOption , CancellationTokenSource , Boolean , CancellationTokenSource , CancellationToken )
+   at WebApiClientCore.Implementations.ApiRequestSender.SendCoreAsync(ApiRequestContext context)
+   at WebApiClientCore.Implementations.ApiRequestSender.SendAsync(ApiRequestContext context)
+
+[ELAPSED] 00:01:40.0775230
+[00:16:26 ERR] 程序发生异常：The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+[00:16:26 INF] -----结束-----
+
+[00:16:26 ERR] 程序发生异常：The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+[00:16:26 INF] =========结束=========
+
+[00:16:26 WRN] 异常：System.Net.Http.HttpRequestException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---＞ System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---＞ System.TimeoutException: A task was canceled.
+ ---＞ System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken )
+   at System.Net.Http.HttpConnectionPool.GetHttp11ConnectionAsync(HttpRequestMessage , Boolean , CancellationToken )
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage , Boolean , Boolean , CancellationToken )
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage , Boolean , CancellationToken )
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage , CancellationToken )
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendCoreAsync(HttpRequestMessage request, Context context, CancellationToken cancellationToken)
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy`1.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ray.BiliBiliTool.Agent.HttpClientDelegatingHandlers.IntervalDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage , CancellationToken )
+   at System.Net.Http.HttpClient.＜SendAsync＞g__Core|83_0(HttpRequestMessage , HttpCompletionOption , CancellationTokenSource , Boolean , CancellationTokenSource , CancellationToken )
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception , Boolean , HttpResponseMessage , CancellationTokenSource , CancellationToken , CancellationTokenSource )
+   at System.Net.Http.HttpClient.＜SendAsync＞g__Core|83_0(HttpRequestMessage , HttpCompletionOption , CancellationTokenSource , Boolean , CancellationTokenSource , CancellationToken )
+   at WebApiClientCore.Implementations.ApiRequestSender.SendCoreAsync(ApiRequestContext context)
+   at WebApiClientCore.Implementations.ApiRequestSender.SendAsync(ApiRequestContext context)
+   at WebApiClientCore.Implementations.DefaultApiActionInvoker`1.InvokeAsync(ApiRequestContext request)
+   at WebApiClientCore.Implementations.DefaultApiActionInvoker`1.InvokeAsync(HttpClientContext context, Object[] arguments)
+   --- End of inner exception stack trace ---
+   at WebApiClientCore.Implementations.DefaultApiActionInvoker`1.InvokeAsync(HttpClientContext context, Object[] arguments)
+   at Ray.BiliBiliTool.DomainService.AccountDomainService.LoginByCookie()
+   at Ray.BiliBiliTool.Application.DailyTaskAppService.Login()
+   at Ray.BiliBiliTool.Application.DailyTaskAppService.DoTaskAsync(CancellationToken cancellationToken)
+   at Ray.BiliBiliTool.Console.BiliBiliToolHostedService.DoTasksAsync(String[] tasks, CancellationToken cancellationToken)
+   at Ray.BiliBiliTool.Console.BiliBiliToolHostedService.StartAsync(CancellationToken cancellationToken)
+[00:16:26 INF] 运行环境：Production
+[00:16:26 INF] 应用目录：/home/yuyue/桌面/linux-x64/
+
+[00:16:26 INF] 运行结束
